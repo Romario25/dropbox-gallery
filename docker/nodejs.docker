@@ -1,0 +1,7 @@
+FROM node:10.11-jessie
+
+RUN npm install -g @angular/cli
+
+#RUN ng new angular-app
+
+WORKDIR /app
