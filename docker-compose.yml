@@ -10,7 +10,7 @@ services:
             - php-fpm
         networks:
               dropbox-gallery-project:
-                ipv4_address: 10.6.0.105
+                ipv4_address: 10.8.0.105
     php-fpm:
         build:
             context: ./docker
@@ -21,7 +21,7 @@ services:
           - "DB_PORT=3306"
           - "DB_HOST=mysql"
           - PHP_IDE_CONFIG=serverName=dropbox-gallery
-          - XDEBUG_CONFIG=remote_host=10.6.0.105
+          - XDEBUG_CONFIG=remote_host=10.8.0.105
         depends_on:
             - mysql
         networks:
@@ -54,7 +54,7 @@ services:
 
         networks:
             dropbox-gallery-project:
-              ipv4_address: 10.6.0.106
+              ipv4_address: 10.8.0.106
 
     nodejs:
         build:
@@ -65,11 +65,11 @@ services:
         tty: true
         networks:
           dropbox-gallery-project:
-            ipv4_address: 10.6.0.107
+            ipv4_address: 10.8.0.107
 networks:
   dropbox-gallery-project:
     driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 10.6.0.0/24
+        - subnet: 10.8.0.0/24
