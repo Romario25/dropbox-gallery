@@ -9,8 +9,8 @@ services:
         depends_on:
             - php-fpm
         networks:
-              dropbox-gallery-project:
-                ipv4_address: 10.8.0.105
+              dropbox-gallery-project2:
+                ipv4_address: 10.10.0.105
     php-fpm:
         build:
             context: ./docker
@@ -21,11 +21,11 @@ services:
           - "DB_PORT=3306"
           - "DB_HOST=mysql"
           - PHP_IDE_CONFIG=serverName=dropbox-gallery
-          - XDEBUG_CONFIG=remote_host=10.8.0.105
+          - XDEBUG_CONFIG=remote_host=10.10.0.105
         depends_on:
             - mysql
         networks:
-            dropbox-gallery-project:
+            dropbox-gallery-project2:
 
     php-cli:
         build:
@@ -42,7 +42,7 @@ services:
         tty: true
 
         networks:
-            dropbox-gallery-project:
+            dropbox-gallery-project2:
 
     mysql:
         image: mysql:5.7
@@ -53,8 +53,8 @@ services:
             - "MYSQL_DATABASE=dropbox-gallery"
 
         networks:
-            dropbox-gallery-project:
-              ipv4_address: 10.8.0.106
+            dropbox-gallery-project2:
+              ipv4_address: 10.10.0.106
 
     nodejs:
         build:
@@ -64,12 +64,14 @@ services:
           - ./www:/app
         tty: true
         networks:
-          dropbox-gallery-project:
-            ipv4_address: 10.8.0.107
+          dropbox-gallery-project2:
+            ipv4_address: 10.10.0.107
+        ports:
+          - 4200:4200
 networks:
-  dropbox-gallery-project:
+  dropbox-gallery-project2:
     driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 10.8.0.0/24
+        - subnet: 10.10.0.0/24

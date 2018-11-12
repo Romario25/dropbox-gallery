@@ -1,0 +1,21 @@
+.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.gallery .photo-block {
+    min-width: 200px;
+    border: #0b1115 1px solid;
+    margin: 10px;
+}
+
+.gallery .photo-block  a  img{
+    position:relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
