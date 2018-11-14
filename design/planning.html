@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="vendor.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body>
@@ -68,6 +72,11 @@
                             <div class="form-group">
                                 <label ><span class="fa fa-location-arrow"></span> Location</label>
                                 <input type="text" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label ><span class="fa fa-calendar"></span> Dates</label>
+                                <input type="text" class="form-control" id="dates" />
                             </div>
                         </form>
                     </div>
@@ -263,6 +272,12 @@
                 </section>
             </article>
             <!--CONTENT-->
+            <script>
+                $(document).ready(function(){
+                    $('#dates').daterangepicker();
+                });
+
+            </script>
         </div>
     </div>
 </body>
