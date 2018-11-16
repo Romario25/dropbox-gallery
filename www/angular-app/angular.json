@@ -24,8 +24,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/animate.css",
-              "src/assets/style.css",
+//              "src/assets/animate.css",
+//              "src/assets/style.css",
+              "src/assets/vendor.css",
+              "src/assets/theme.css",
               "src/styles.css"
             ],
             "scripts": []
